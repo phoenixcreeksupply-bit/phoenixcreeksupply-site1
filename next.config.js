@@ -1,6 +1,7 @@
-// next.config.js
-const nextConfig = {
-  reactStrictMode: true
-};
-
-module.exports = nextConfig;
+// postcss.config.js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {}
+  }
+}
