@@ -2,7 +2,7 @@
 import Head from "next/head";
 
 export default function Guide() {
-  const PRODUCT_URL = "https://gumroad.com/l/YOUR_PRODUCT_ID"; // ← REPLACE with your real Gumroad URL
+  const PRODUCT_URL = "https://phoenixcreeksupply.gumroad.com/l/gzxqj; // ← REPLACE with your real Gumroad URL
 
   return (
     <>
