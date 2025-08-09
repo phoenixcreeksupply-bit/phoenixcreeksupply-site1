@@ -136,10 +136,9 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Footer */}
-      <footer className="mt-12 text-center text-sm text-gray-500">
-        Field-tested by Monroe · Patience is a Virtue
-      </footer>
-    </main>
-  );
-}
+      <footer className="mt-12 text-center text-sm text-gray-500 space-x-4">
+  <a href="/disclaimer" className="hover:underline">Disclaimer</a>
+  <a href="/terms" className="hover:underline">Terms</a>
+  <a href="/privacy" className="hover:underline">Privacy</a>
+  <span>· Field-tested by Monroe · Patience is a Virtue</span>
+</footer>
