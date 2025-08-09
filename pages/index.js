@@ -1,31 +1,27 @@
 // pages/index.js
 
-// If your Amazon Associates tag ever changes, update this string once:
+// If your Amazon Associates tag ever changes, update once here:
 const AMAZON_TAG = "phoenixcreekg-20";
 
 export default function Home() {
-  // Lightweight product list you can expand any time
   const featured = [
     {
       title: "Garrett Pro-Pointer AT",
-      desc:
-        "Industry-favorite pinpointer for fast target recovery. Waterproof and rugged for field use.",
+      desc: "Industry-favorite pinpointer for fast target recovery. Waterproof and rugged for field use.",
       href: `https://www.amazon.com/s?k=garrett+pro+pointer+at&tag=${AMAZON_TAG}`,
       img: "https://images.unsplash.com/photo-1517953915334-ab3c02d2e6d6?q=80&w=1200&auto=format&fit=crop",
       alt: "Garrett Pro-Pointer AT on rocky ground",
     },
     {
       title: "Minelab Equinox 900",
-      desc:
-        "Pro-level detector with multi-frequency performance for coins, relics, and gold.",
+      desc: "Pro-level detector with multi-frequency performance for coins, relics, and gold.",
       href: `https://www.amazon.com/s?k=minelab+equinox+900&tag=${AMAZON_TAG}`,
       img: "https://images.unsplash.com/photo-1520697222861-e369479f0d4b?q=80&w=1200&auto=format&fit=crop",
       alt: "Metal detector on forest floor",
     },
     {
       title: "Husqvarna Forest Hatchet",
-      desc:
-        "Compact, balanced hatchet for camp chores, kindling, and bushcraft.",
+      desc: "Compact, balanced hatchet for camp chores, kindling, and bushcraft.",
       href: `https://www.amazon.com/s?k=husqvarna+hatchet&tag=${AMAZON_TAG}`,
       img: "https://images.unsplash.com/photo-1518780537270-935e9aae2370?q=80&w=1200&auto=format&fit=crop",
       alt: "Hatchet embedded in a stump outdoors",
@@ -76,10 +72,7 @@ export default function Home() {
       <section className="mb-6">
         <header className="flex items-end justify-between mb-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Featured Gear</h2>
-          <a
-            href="/gear"
-            className="text-sm underline text-gray-700 hover:text-gray-900"
-          >
+          <a href="/gear" className="text-sm underline text-gray-700 hover:text-gray-900">
             View All Gear →
           </a>
         </header>
@@ -127,7 +120,7 @@ export default function Home() {
           Daily prompts, field wisdom, and practical mental models to keep you steady under pressure.
         </p>
         <a
-          href="https://gumroad.com" /* replace with your real product URL */
+          href="https://gumroad.com" // TODO: replace with your real Gumroad product URL
           target="_blank"
           rel="noopener"
           className="inline-block mt-4 px-5 py-2.5 bg-black text-white rounded hover:bg-gray-800 transition"
@@ -136,9 +129,13 @@ export default function Home() {
         </a>
       </section>
 
+      {/* Footer with legal links + tagline */}
       <footer className="mt-12 text-center text-sm text-gray-500 space-x-4">
-  <a href="/disclaimer" className="hover:underline">Disclaimer</a>
-  <a href="/terms" className="hover:underline">Terms</a>
-  <a href="/privacy" className="hover:underline">Privacy</a>
-  <span>· Field-tested by Monroe · Patience is a Virtue</span>
-</footer>
+        <a href="/disclaimer" className="hover:underline">Disclaimer</a>
+        <a href="/terms" className="hover:underline">Terms</a>
+        <a href="/privacy" className="hover:underline">Privacy</a>
+        <span>· Field-tested by Monroe · Patience is a Virtue</span>
+      </footer>
+    </main>
+  );
+        }
