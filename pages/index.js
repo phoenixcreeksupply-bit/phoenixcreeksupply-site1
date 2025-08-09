@@ -1,5 +1,5 @@
 // pages/index.js
-
+import Head from "next/head";
 // If your Amazon Associates tag ever changes, update once here:
 const AMAZON_TAG = "phoenixcreekg-20";
 
