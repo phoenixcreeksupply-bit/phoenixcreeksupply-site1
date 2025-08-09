@@ -9,6 +9,10 @@ export default function App({ Component, pageProps }) {
       <div className="px-6 pb-12">
         <Component {...pageProps} />
       </div>
+    <Head>
+  <title>Phoenix Creek Supply — Rugged Tools for the Modern Stoic</title>
+  <meta name="description" content="Field-tested gear, digital guides, and no-nonsense tools for the modern stoic." />
+</Head>
     </main>
   );
 }
