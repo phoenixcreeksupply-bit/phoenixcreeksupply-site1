@@ -1,25 +1,19 @@
 import Link from "next/link";
-import Head from "next/head";
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Phoenix Creek Supply</title>
-        <meta name="description" content="Rugged Tools for the Modern Stoic" />
-      </Head>
-      <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-16 text-center">
-        <h1 className="text-5xl font-bold mb-4">Phoenix Creek Supply</h1>
-        <p className="text-xl mb-6 max-w-xl">
-          Rugged tools for the modern stoic. Digital kits. Bushcraft gear. Earn your legacy.
-        </p>
+    <main className="min-h-screen flex items-center justify-center bg-black text-white">
+      <div className="text-center p-8">
+        <h1 className="text-4xl font-bold mb-6">Phoenix Creek Supply</h1>
+        <p className="mb-4 text-lg">Rugged Tools for the Modern Stoic</p>
         <Link
           href="https://phoenixcreeksupply.gumroad.com/l/gnqvw"
-          className="bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-300"
+          target="_blank"
+          className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200"
         >
-          Buy the Modern Stoic Field Guide
+          Buy the Field Guide
         </Link>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
