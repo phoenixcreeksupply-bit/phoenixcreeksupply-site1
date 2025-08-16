@@ -1,36 +1,14 @@
-import { GearCard } from "@/components/gearcard"; import { gear } from "@/data/gear"; import Link from "next/link";
+// Updated gear image paths to fix public/page conflict import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import Image from "next/image";
 
-export default function HomePage() { return ( <main className="mx-auto max-w-4xl px-4 py-12"> <h1 className="text-3xl font-bold mb-4"> Rugged Tools for the Modern Stoic </h1> <p className="mb-8"> Digital kits. Bushcraft gear. Earn your legacy. </p>
+const gear = [ { title: "Garrett AT Pro Metal Detector", image: "/gear-images/atpro.jpg", link: "https://amzn.to/3OjxJEF" }, { title: "Husqvarna 26" Wood Axe", image: "/gear-images/axe.jpg", link: "https://amzn.to/3Opr1qP" }, { title: "Bushcraft Survival Knife", image: "/gear-images/knife.jpg", link: "https://amzn.to/47vZJTG" }, { title: "Heavy-Duty Sluice Box", image: "/gear-images/sluice.jpg", link: "https://amzn.to/45cw7yl" }, { title: "Classifying Gold Pan Set", image: "/gear-images/panset.jpg", link: "https://amzn.to/45aTQxX" }, { title: "Fire Starter Ferro Rod Kit", image: "/gear-images/firestarter.jpg", link: "https://amzn.to/3YvvbWA" } ];
 
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-    {gear.map((item, index) => (
-      <GearCard key={index} item={item} />
-    ))}
-  </div>
+export default function GearPage() { return ( <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"> {gear.map((item, index) => ( <Card key={index}> <a href={item.link} target="_blank" rel="noopener noreferrer"> <Image
+src={item.image}
+alt={item.title}
+width={500}
+height={300}
+className="rounded-t-2xl"
+/> <CardContent> <p className="text-xl font-bold pt-2">{item.title}</p> <p className="text-base text-muted-foreground">Amazon (Fast Ship)</p> </CardContent> </a> </Card> ))} </div> ); }
 
-  <div className="bg-white rounded-xl shadow p-6 mt-8">
-    <h2 className="text-xl font-bold mb-2">
-      The Modern Stoic Field Guide
-    </h2>
-    <p className="mb-4">
-      Daily prompts, field wisdom, and practical mental models to keep you
-      steady under pressure.
-    </p>
-    <Link href="https://monroe.gumroad.com/l/modernstoic">
-      <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
-        Get the Guide
-      </button>
-    </Link>
-  </div>
-
-  <footer className="mt-12 text-sm text-gray-500 text-center">
-    <p>
-      Disclaimer · Terms · Privacy · Field-tested by Monroe · Phoenix Creek
-      Supply
-    </p>
-  </footer>
-</main>
-
-); }
 
 
