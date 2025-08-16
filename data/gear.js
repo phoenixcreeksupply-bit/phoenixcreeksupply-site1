@@ -1,4 +1,15 @@
-// data/gear.js
+const gear = [
+  {
+    id: "modern-stoic-guide",
+    title: "Modern Stoic Field Guide",
+    price: "$17+",
+    link: "https://phoenixcreeksupply.gumroad.com/l/gnqvw",
+    image: "/gear/stoic-cover.png",
+  },
+  // Add others here…
+];
+
+export default gear;// data/gear.js
 // Phoenix Creek Supply — Top-seller picks with affiliate links
 const TAG = "phoenixcreekg-20"; // your Amazon Associates ID
 
