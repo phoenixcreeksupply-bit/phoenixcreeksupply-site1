@@ -1,30 +1,13 @@
+// Updated gear image paths to fix public/page conflict import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import Image from "next/image";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-white p-6 text-black">
-      <h1 className="text-4xl font-bold mb-2">Welcome to Phoenix Creek Supply</h1>
-      <p className="text-xl mb-6">Rugged Tools for the Modern Stoic.</p>
+const gear = [ { title: "Garrett AT Pro Metal Detector", image: "/gear-images/atpro.jpg", link: "https://amzn.to/3OjxJEF" }, { title: "Husqvarna 26" Wood Axe", image: "/gear-images/axe.jpg", link: "https://amzn.to/3Opr1qP" }, { title: "Bushcraft Survival Knife", image: "/gear-images/knife.jpg", link: "https://amzn.to/47vZJTG" }, { title: "Heavy-Duty Sluice Box", image: "/gear-images/sluice.jpg", link: "https://amzn.to/45cw7yl" }, { title: "Classifying Gold Pan Set", image: "/gear-images/panset.jpg", link: "https://amzn.to/45aTQxX" }, { title: "Fire Starter Ferro Rod Kit", image: "/gear-images/firestarter.jpg", link: "https://amzn.to/3YvvbWA" } ];
 
-      <section className="my-8">
-        <h2 className="text-2xl font-semibold mb-4">Featured Kits</h2>
-        <div className="grid gap-6 sm:grid-cols-2">
-          <div className="border p-4">
-            <h3 className="text-xl font-bold mb-2">Prospector Essentials Kit</h3>
-            <p className="mb-2">Gold panning + claim documentation in one powerful starter bundle.</p>
-            <button className="bg-black text-white px-4 py-2">View Kit</button>
-          </div>
-          <div className="border p-4">
-            <h3 className="text-xl font-bold mb-2">Navigation Bundle</h3>
-            <p className="mb-2">Stay on course with our digital GPS + guide combo.</p>
-            <button className="bg-black text-white px-4 py-2">Buy Now</button>
-          </div>
-        </div>
-      </section>
+export default function GearPage() { return ( <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"> {gear.map((item, index) => ( <Card key={index}> <a href={item.link} target="_blank" rel="noopener noreferrer"> <Image
+src={item.image}
+alt={item.title}
+width={500}
+height={300}
+className="rounded-t-2xl"
+/> <CardContent> <p className="text-xl font-bold pt-2">{item.title}</p> <p className="text-base text-muted-foreground">Amazon (Fast Ship)</p> </CardContent> </a> </Card> ))} </div> ); }
 
-      <section className="mt-12">
-        <h2 className="text-xl italic">Patience is a Virtue</h2>
-        <p className="mt-2 text-sm text-gray-600">Field-tested by Monroe · Phoenix Creek Supply</p>
-      </section>
-    </main>
-  );
-}
+
