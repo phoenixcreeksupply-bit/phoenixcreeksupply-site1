@@ -1,58 +1,36 @@
-// pages/_app.js
-import Head from "next/head";
-import "../styles/globals.css";
-import Header from "../components/Header";
+import { GearCard } from "@/components/gearcard"; import { gear } from "@/data/gear"; import Link from "next/link";
 
-const GA_ID = "G-XXXXXXXXXX"; // ← replace with your GA4 ID when you have it
+export default function HomePage() { return ( <main className="mx-auto max-w-4xl px-4 py-12"> <h1 className="text-3xl font-bold mb-4"> Rugged Tools for the Modern Stoic </h1> <p className="mb-8"> Digital kits. Bushcraft gear. Earn your legacy. </p>
 
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Basic SEO defaults */}
-        <meta name="theme-color" content="#ffffff" />
-        <meta property="og:site_name" content="Phoenix Creek Supply" />
-        <meta property="og:type" content="website" />
-      </Head>
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    {gear.map((item, index) => (
+      <GearCard key={index} item={item} />
+    ))}
+  </div>
 
-      {/* Google Analytics (safe to keep even before you add your real ID) */}
-      {GA_ID !== "G-XXXXXXXXXX" && (
-        <>
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}');
-              `,
-            }}
-          />
-        </>
-      )}
+  <div className="bg-white rounded-xl shadow p-6 mt-8">
+    <h2 className="text-xl font-bold mb-2">
+      The Modern Stoic Field Guide
+    </h2>
+    <p className="mb-4">
+      Daily prompts, field wisdom, and practical mental models to keep you
+      steady under pressure.
+    </p>
+    <Link href="https://monroe.gumroad.com/l/modernstoic">
+      <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+        Get the Guide
+      </button>
+    </Link>
+  </div>
 
-      <Header />
-      <main className="min-h-screen bg-white text-gray-900">
-        <Component {...pageProps} />
-      </main>
+  <footer className="mt-12 text-sm text-gray-500 text-center">
+    <p>
+      Disclaimer · Terms · Privacy · Field-tested by Monroe · Phoenix Creek
+      Supply
+    </p>
+  </footer>
+</main>
 
-      <footer className="border-t border-gray-200 bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-8 text-sm text-gray-600">
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-            <p>Field-tested by Monroe · Patience is a Virtue</p>
-            <p className="text-xs text-gray-500">
-              As an Amazon Associate, we earn from qualifying purchases.
-            </p>
-            <nav className="text-xs space-x-4">
-              <a href="/disclaimer" className="hover:underline">Disclaimer</a>
-              <a href="/terms" className="hover:underline">Terms</a>
-              <a href="/privacy" className="hover:underline">Privacy</a>
-            </nav>
-          </div>
-        </div>
-      </footer>
-    </>
-  );
-    }
+); }
+
+
