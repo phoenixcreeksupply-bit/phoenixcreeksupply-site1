@@ -24,7 +24,17 @@ export default function GearCard({ item }) {
           className="underline font-medium"
         >
           Check Price on Amazon →
-        </a>
+        </a><Link
+  href="https://phoenixcreeksupply.gumroad.com/l/gnqvw"
+  target="_blank"
+  className="mt-2 inline-block px-4 py-2 bg-white text-black rounded hover:bg-gray-200"
+>
+  View Product
+</Link><Link
+  href="https://phoenixcreeksupply.gumroad.com/l/gnqvw"
+  target="_blank"
+  className="mt-2 inline-block px-4 py-2 bg-white text-black rounded hover:bg-gray-200" 
+         
       </div>
     </article>
   );
