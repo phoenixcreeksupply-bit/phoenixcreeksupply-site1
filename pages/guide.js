@@ -1,34 +1,25 @@
-import Image from "next/image";
-import Footer from "@/components/Footer";
+import Link from "next/link";
+import Head from "next/head";
 
 export default function Guide() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow container mx-auto px-4 py-12 text-center">
+    <>
+      <Head>
+        <title>Modern Stoic Field Guide</title>
+        <meta name="description" content="Buy the Modern Stoic Field Guide – rugged philosophy and practical tools for daily discipline" />
+      </Head>
+      <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-16 text-center">
         <h1 className="text-4xl font-bold mb-4">Modern Stoic Field Guide</h1>
-        <p className="text-lg mb-8">
-          A battle-tested blueprint for men who lead with discipline, not emotion.
-          Tools, trackers, and philosophy for those who live on mission.
+        <p className="text-lg mb-6 max-w-xl">
+          A rugged, no-BS guide built to help men navigate modern chaos with discipline, clarity, and self-reliance. Comes packed with daily trackers, mindset tools, and stoic reflections.
         </p>
-        <div className="flex justify-center mb-8">
-          <Image
-            src="/guide-cover.jpg"
-            alt="Modern Stoic Field Guide Cover"
-            width={400}
-            height={500}
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-        <a
-          href="https://monroe.gumroad.com/l/modernstoic"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+        <Link
+          href="https://phoenixcreeksupply.gumroad.com/l/gnqvw"
+          className="bg-white text-black px-6 py-3 rounded-full font-bold text-lg hover:bg-gray-300"
         >
-          Buy on Gumroad
-        </a>
+          Buy Now on Gumroad
+        </Link>
       </main>
-      <Footer />
-    </div>
+    </>
   );
 }
